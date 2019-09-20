@@ -30,6 +30,7 @@ public class ResultMode: HandyJSON {
     public var taskCarId:String!
     public  var status:Int!
     public var description:String!
+    public var upgradeDate:String!
     
     public required init() {
         

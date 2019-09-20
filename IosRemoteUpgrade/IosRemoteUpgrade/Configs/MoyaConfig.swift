@@ -16,11 +16,18 @@ let RESULT_CODE = "flag"      //状态码
 
 let RESULT_MESSAGE = "message"  //错误消息提示
 
+let SUCCESS = 200
 
-/*  错误情况的提示
- {
- "flag": "0002",
- "msg": "手机号码不能为空",
- "lockerFlag": true
- }
- **/
+
+let ERRO_NOT_FOUNT = 404
+let ERRO_NOT_FOUNT_MESSAGE = "未找到请求路由，多用于下载文件时，文件不存在或文件不能被下载"
+
+let ERRO_SERVER = 500
+let ERRO_SERVER_MESSAGE = "服务端错误"
+
+let ERRO_UPTATE = 206
+let ERRO_UPTATE_MESSAGE = "下载部分文件时，成功响应"
+
+let ERRO_NOT_MESSAGE="未知错误"
+
+

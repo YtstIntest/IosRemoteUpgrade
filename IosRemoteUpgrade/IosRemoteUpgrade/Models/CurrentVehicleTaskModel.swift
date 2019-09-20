@@ -33,7 +33,8 @@ public class ResulCurrenttModel: HandyJSON {
     public var progress:Int!
     public var result:Int!
     public var isNewTask:Int!
-    
+    public var time:String!
+
     public  required init() {
         
     }

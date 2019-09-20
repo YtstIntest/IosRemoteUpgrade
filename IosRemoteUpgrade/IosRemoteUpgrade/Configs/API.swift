@@ -19,9 +19,16 @@ enum API{
     case getUpdateTaskList(vin:String,pi:Int,ps:Int,uDate:String)
 }
 
+
 extension API:TargetType{
     var baseURL: URL {
+        return URL.init(string: "http://113.57.170.58:62067/api/fota/")!
+    }
+    var development:URL{
         return URL.init(string: "http://113.57.170.58:62063/api/fota/")!
+    }
+    var joint_tune:URL{
+        return URL.init(string: "http://113.57.170.58:62067/api/fota/")!
     }
     
     var path: String {
