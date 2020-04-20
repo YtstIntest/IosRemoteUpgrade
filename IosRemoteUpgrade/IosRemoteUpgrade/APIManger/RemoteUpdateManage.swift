@@ -20,37 +20,7 @@ open class RemoteUpdateManage: NSObject {
         config = configs
     }
 
-    public func getUpdateList(vin: String, uDate: String, success: @escaping (CurrentVehicleTaskModel) -> Void, failed: @escaping (String) -> Void) {
-        NetWorkRequest(.queryCarUpdateTask(vin: vin, uDate: uDate, taskcarId: taskcarId), completion: { (jsonString) -> Void in
-            if let mappedObject = JSONDeserializer<BaseResponse<CurrentVehicleTaskModel>>.deserializeFrom(json: jsonString) {
-                switch mappedObject.statusCode {
-                case SUCCESS:
-                    // 从字符串转换为对象实例
-                    success(mappedObject.body)
-                    break
-                case ERRO_NOT_FOUNT:
-                    failed(ERRO_NOT_FOUNT_MESSAGE)
-                    break
-                case ERRO_SERVER:
-                    failed(ERRO_SERVER_MESSAGE)
-
-                    break
-                case ERRO_UPTATE:
-                    failed(ERRO_UPTATE_MESSAGE)
-
-                    break
-                default:
-                    failed(ERRO_NOT_MESSAGE)
-                    break
-                }
-            }
-        }, failed: { (failedCallback) -> Void in
-            failed(failedCallback)
-
-        })
-    }
-
-    /// 查询已经升级的车辆任务列表
+    /// 获取历史升级任务列表
     ///
     /// - Parameters:
     ///   - vin: 车辆vin
