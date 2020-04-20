@@ -10,12 +10,10 @@ import Foundation
 import HandyJSON
 
 public class UpdateConfirInterfaceModel: HandyJSON {
-    public  var result:NSObject!
-    public  var total:Int!
-    public var code:Int!
-    public var msg:String!
-    public  required init() {
-        
+    public var result: NSObject!
+    public var total: Int!
+    public var code: Int!
+    public var msg: String!
+    public required init() {
     }
-    
 }
