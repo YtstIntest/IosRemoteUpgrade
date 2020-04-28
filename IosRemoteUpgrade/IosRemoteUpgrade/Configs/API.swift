@@ -20,15 +20,7 @@ enum API {
 
 extension API: TargetType {
     var baseURL: URL {
-        return URL(string: "http://113.57.170.58:62067/api/fota/")!
-    }
-
-    var development: URL {
-        return URL(string: "http://113.57.170.58:62063/api/fota/")!
-    }
-
-    var joint_tune: URL {
-        return URL(string: "http://113.57.170.58:62067/api/fota/")!
+        return URL(string: "http://nats.intestcar.com:62078/api/fota/")!
     }
 
     var path: String {

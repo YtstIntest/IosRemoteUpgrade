@@ -28,6 +28,7 @@ public class ResulCurrenttModel: HandyJSON {
     public var duration: Int!
     public var status: Int!
     public var progress: Int!
+    public var resultCode: Int!
     public var result: Int!
     public var isNewTask: Int!
     public var time: String!

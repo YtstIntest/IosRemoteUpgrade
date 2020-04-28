@@ -16,9 +16,6 @@ open class RemoteUpdateManage: NSObject {
     var status: Int = -1
     var isTimer = 0
 
-    public func configEnvironment(configs: Config) {
-        config = configs
-    }
 
     /// 获取历史升级任务列表
     ///

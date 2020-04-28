@@ -20,26 +20,15 @@ typealias failedCallback = ((String) -> Void)
 /// 网络错误的回调
 typealias errorCallback = (() -> Void)
 
-public enum Config {
-    case DEVELOPMENT // 开发环境
 
-    case JOINT_TUNE // 联调环境
-}
 
-var config = Config.JOINT_TUNE
+
 
 /// 网络请求的基本设置,这里可以拿到是具体的哪个网络请求，可以在这里做一些设置
 private let myEndpointClosure = { (target: API) -> Endpoint in
     /// 这里把endpoint重新构造一遍主要为了解决网络请求地址里面含有? 时无法解析的bug https://github.com/Moya/Moya/issues/1198
     var url = target.baseURL.absoluteString + target.path
-    switch config {
-    case Config.DEVELOPMENT:
-        url = target.development.absoluteString + target.path
-        break
-    case Config.JOINT_TUNE:
-        url = target.joint_tune.absoluteString + target.path
-        break
-    }
+
 
     var task = target.task
 
